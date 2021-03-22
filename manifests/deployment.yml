@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "testkubernetesdeploy-8a2a"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "testkubernetesdeploy-8a2a"
+  template:
+    metadata:
+      labels:
+        app: "testkubernetesdeploy-8a2a"
+    spec:
+      containers:
+        - name: "testkubernetesdeploy-8a2a"
+          image: "containertestdeployregistry.azurecr.io/testkubernetesdeploy"
+          ports:
+          - containerPort: 80
